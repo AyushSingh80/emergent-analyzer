@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 2%;
+        --foreground: 0 0% 93%;
+        --card: 0 0% 7%;
+        --card-foreground: 0 0% 93%;
+        --popover: 0 0% 5%;
+        --popover-foreground: 0 0% 93%;
+        --primary: 217 91% 60%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 349 89% 60%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 0 0% 12%;
+        --muted-foreground: 0 0% 63%;
+        --accent: 263 70% 66%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 15%;
+        --input: 0 0% 15%;
+        --ring: 217 91% 60%;
+        --chart-1: 217 91% 60%;
+        --chart-2: 263 70% 66%;
+        --chart-3: 349 89% 60%;
+        --chart-4: 160 84% 39%;
+        --chart-5: 38 92% 50%;
+        --radius: 0.25rem;
+        --success: 160 84% 39%;
+        --warning: 38 92% 50%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Chivo', sans-serif;
+    }
+}
+
+/* Grid lines background */
+.grid-lines {
+    background-image: 
+        linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Noise overlay */
+.noise-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.03;
+    mix-blend-mode: overlay;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+/* Neon glow effect */
+.neon-glow {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.neon-glow-secondary {
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+}
+
+.neon-glow-accent {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+/* Terminal input style */
+.terminal-input {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-bottom: 2px solid #27272a;
+    transition: border-color 0.3s ease;
+}
+
+.terminal-input:focus {
+    border-bottom-color: #3b82f6;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Animate on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Chart tooltip custom */
+.recharts-tooltip-wrapper {
+    outline: none !important;
+}
+
+.custom-tooltip {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid rgba(39, 39, 42, 0.5) !important;
+    backdrop-filter: blur(16px);
+    padding: 12px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+/* Data debug wrapper */
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}

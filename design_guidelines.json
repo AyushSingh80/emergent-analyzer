@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "persona": "E1",
+    "mission": "Create a top 1% analytics dashboard that feels like a high-performance tactical command center. Fusion of 'Bloomberg Terminal' precision with 'Cyberpunk' aesthetics.",
+    "principles": [
+      "Fusion over Imitation: Mix financial rigor with gaming HUD aesthetics.",
+      "Emotion First: The user should feel powerful and omniscient.",
+      "Content is King: Data is the hero; UI recedes.",
+      "Zoom In: Focus on the metrics that matter.",
+      "Negative Space: Use it to group data logically.",
+      "Contrast: High contrast for readability in dark mode."
+    ],
+    "anti_patterns": [
+      "Purple/Teal CTAs (Use Electric Blue or Rose instead)",
+      "Inter Everywhere (Use Chivo/JetBrains Mono for Headings)",
+      "Center-Everything (Use asymmetric grids)",
+      "Gradient Overload (Use gradients only for data lines/bars)"
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Chivo, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "imports": [
+      "https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap"
+    ],
+    "rules": {
+      "headings": "tracking-tight font-black uppercase",
+      "subheadings": "font-mono text-xs tracking-widest uppercase text-muted-foreground",
+      "body": "leading-relaxed text-sm or text-base"
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#050505",
+      "surface": "#121212",
+      "surface_highlight": "#1E1E1E",
+      "border": "#27272A",
+      "primary": "#3B82F6",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#F43F5E",
+      "accent": "#8B5CF6",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "text_primary": "#EDEDED",
+      "text_secondary": "#A1A1AA"
+    },
+    "chart_colors": [
+      "#3B82F6",
+      "#8B5CF6",
+      "#F43F5E",
+      "#10B981",
+      "#F59E0B"
+    ],
+    "gradients": {
+      "primary_glow": "linear-gradient(180deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0) 100%)",
+      "surface_shimmer": "linear-gradient(45deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)"
+    }
+  },
+  "layout": {
+    "spacing_scale": "generous",
+    "grid_system": "Bento Grid Mode B (High Density)",
+    "container_padding": "p-6 md:p-8 lg:p-12",
+    "gap_size": "gap-4 md:gap-6",
+    "border_radius": {
+      "outer": "rounded-none",
+      "inner": "rounded-sm",
+      "buttons": "rounded-none"
+    }
+  },
+  "components": {
+    "buttons": {
+      "style": "sharp-edged, technical",
+      "classes": "rounded-none font-mono uppercase tracking-wider border border-primary/50 hover:bg-primary/10 transition-all duration-300"
+    },
+    "cards": {
+      "style": "HUD-panel",
+      "classes": "bg-card/50 backdrop-blur-md border border-border/50 rounded-sm shadow-none hover:border-primary/30 transition-colors"
+    },
+    "inputs": {
+      "style": "terminal-input",
+      "classes": "bg-black/50 border-b-2 border-border focus:border-primary rounded-none px-4 py-3 font-mono text-lg focus:ring-0"
+    },
+    "charts": {
+      "library": "Recharts",
+      "style": "neon-lines",
+      "tooltip_style": "bg-black/90 border border-border/50 backdrop-blur-xl text-xs font-mono"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-black/40 border border-white/10",
+    "neon_glow": "shadow-[0_0_15px_rgba(59,130,246,0.3)]",
+    "grid_lines": "bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]",
+    "noise": "opacity-20 mix-blend-overlay pointer-events-none fixed inset-0 z-50 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
+  },
+  "media": {
+    "images": {
+      "hero_background": "https://images.unsplash.com/photo-1762279388988-3f8abcc7dca2?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "analyst_working": "https://images.unsplash.com/photo-1573627856541-a513441cd5e2?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "abstract_data": "https://images.unsplash.com/photo-1762279388956-1c098163a2a8?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": "Lucide React (Stroke width: 1.5px)"
+  },
+  "pages": {
+    "landing": {
+      "layout": "Centered Hero with massive input",
+      "elements": [
+        "Hero Text: 'DATA INTELLIGENCE TERMINAL'",
+        "Input: 'ENTER WEBHOOK SOURCE...'",
+        "Background: Abstract Neon Lines + Grid"
+      ]
+    },
+    "data_preview": {
+      "layout": "Full-width Datagrid",
+      "elements": [
+        "Sticky Header",
+        "Column Selector (Checkbox Dropdown)",
+        "Pagination/Infinite Scroll"
+      ]
+    },
+    "dashboard": {
+      "layout": "Bento Grid (Mode B)",
+      "elements": [
+        "KPI Cards (Top Row)",
+        "Main Chart (Col-span-2 Row-span-2)",
+        "Distribution Chart (Col-span-1)",
+        "Recent Activity List (Col-span-1 Row-span-2)"
+      ]
+    },
+    "comparison": {
+      "layout": "Split Pane (50/50)",
+      "elements": [
+        "Left Chart Selector",
+        "Right Chart Selector",
+        "Sync Tooltips Toggle"
+      ]
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use the 'Chivo' font for all headings. Import it in index.css.",
+    "Set the global background to #050505 in index.css.",
+    "Override Shadcn 'rounded-md' to 'rounded-sm' or 'rounded-none' in tailwind.config.js.",
+    "Use the 'grid_lines' pattern as a background for the dashboard area.",
+    "Ensure all charts use the defined 'chart_colors' palette.",
+    "Implement the 'noise' overlay in App.js or index.css.",
+    "For the Webhook Input, make it look like a command line interface or a search bar.",
+    "Use 'sonner' for all notifications (success/error).",
+    "Add 'data-testid' to all interactive elements."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for backgrounds, only for accents.",
+    "Do not center align text in the dashboard; use left align.",
+    "Use 24px or 32px padding inside cards.",
+    "Always add hover states to buttons and rows.",
+    "Use 'Lucide' icons with stroke-width={1.5}."
+  ]
+}
